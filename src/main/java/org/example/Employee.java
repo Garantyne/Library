@@ -1,4 +1,6 @@
 package org.example;
+import org.apache.commons.lang3.StringUtils;
+
 import java.util.List;
 import java.util.Objects;
 
@@ -12,9 +14,21 @@ public class Employee {
     public static int idCounter = 0;
 
     public Employee(String firstName,String twoName, String lastName,int salary, int department){
-        this.firstName = firstName;
-        this.twoName = twoName;
-        this.lastName = lastName;
+        if(StringUtils.isEmpty(firstName)){
+            throw new RuntimeException("400 Bad Request");
+        }else {
+            this.firstName = StringUtils.capitalize(firstName);
+        }
+        if(StringUtils.isEmpty(twoName)){
+            throw new RuntimeException("400 Bad Request");
+        }else {
+            this.twoName = StringUtils.capitalize(twoName);
+        }
+        if(StringUtils.isEmpty(lastName)){
+            throw new RuntimeException("400 Bad Request");
+        }else {
+            this.lastName = StringUtils.capitalize(lastName);
+        }
         this.salary = salary;
         this.department = department;
         this.id = idCounter;
