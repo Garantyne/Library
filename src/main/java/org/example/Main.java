@@ -27,7 +27,7 @@ public class Main {
         System.out.println("минимальная зарплата у " + Show.showMinimumWage(Employees));
         System.out.println("максимальная зарплата у " + Show.showTheMaximumSalary(Employees));
         System.out.println("Средняя зарплата  " + Show.showAverageSalary(Employees));
-        Show.showEmployeeNames(Employees);
+
 
 
     }
